@@ -539,7 +539,7 @@ trait CdbtView {
     foreach ( $output_columns as $column ) {
       if ( array_key_exists( $column, $datasource[0] ) ) {
         $columns[] = [
-          'label' => empty( $table_schema[$column]['logical_name'] ) ? $column : $table_schema[$column]['logical_name'], 
+          'label' => empty( $table_schema[$column]['logical_name'] ) ? __($column,CDBT) : __($table_schema[$column]['logical_name'],CDBT),                                                           
           'property' => $column, 
           'sortable' => in_array( $column, $truncate_cols ) ? ( in_array( $column, $clickable_cols ) ? $enable_sort : false ) : $enable_sort, 
           'sortDirection' => is_array( $sort_order ) && array_key_exists( $column, $sort_order ) ? $sort_order[$column] : 'asc', 
