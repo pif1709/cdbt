@@ -528,8 +528,8 @@ trait CdbtEdit {
       if ( ! $enable_sort ) 
         $_classes[] = 'disable-sort';
       
-      $columns[] = [
-        'label' => empty($scheme['logical_name']) ? $column : $scheme['logical_name'], 
+      $columns[] = [        
+        'label' => empty($scheme['logical_name']) ? __($column,CDBT) : __($scheme['logical_name']), 
         'property' => $column, 
         'sortable' => in_array( $column, $truncate_cols ) ? ( in_array( $column, $clickable_cols ) ? $enable_sort : false ) : $enable_sort, 
         'sortDirection' => is_array( $sort_order ) && array_key_exists( $column, $sort_order ) ? $sort_order[$column] : 'asc', 
